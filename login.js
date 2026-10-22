@@ -3,7 +3,7 @@ const API_URL = "https://script.google.com/macros/s/AKfycbzw2o9EId0F0SgBNJtTQCP9
 document.addEventListener('DOMContentLoaded', () => {
     const existingLogin = localStorage.getItem('loggedInEmail');
     if (existingLogin) {
-        window.location.href = "https://sites.google.com/view/5timemberdashboardbeta/member-dashboard";
+        window.location.href = "https://sites.google.com/view/5titanium2024/member-dashboard";
         return; 
     }
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 errorMsg.textContent = "";
                 localStorage.setItem('loggedInEmail', loggedInEmailString);
-                window.location.href = "https://sites.google.com/view/5timemberdashboardbeta/member-dashboard";
+                window.location.href = "https://sites.google.com/view/5titanium2024/member-dashboard";
             }, 1000); 
 
         } catch (err) {
