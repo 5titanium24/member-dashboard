@@ -1,0 +1,718 @@
+/* General Reset */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Comic Neue', 'Comic Sans MS', 'Comic Sans', 'ZCOOL KuaiLe', cursive, sans-serif; 
+    line-height: 1.25; 
+}
+
+body { 
+    background-color: #f9f9f9; 
+    color: #333; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+/* Top Navigation */
+#top-menu { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 30px; 
+    height: 50px; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    z-index: 1000; 
+    background-color: rgba(0, 0, 0, 0.4) !important; 
+    transition: all 0.3s ease; 
+}
+
+#top-menu.scrolled {
+    background-color: #000000 !important; 
+    border-bottom: 1px solid #333 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; 
+}
+
+.logo-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+.navbar-logo { 
+    height: 40px; 
+    width: auto; 
+}
+
+#top-menu .logo-text { 
+    font-weight: bold; 
+    font-size: 19px; 
+    font-family: 'ZCOOL KuaiLe', cursive, sans-serif !important; 
+    color: #ffffff !important; 
+    white-space: nowrap; 
+}
+
+#top-menu .nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 15px; 
+    align-items: center; 
+    flex-wrap: nowrap; 
+}
+
+#top-menu a { 
+    text-decoration: none; 
+    color: #ffffff !important; 
+    padding: 5px 8px; 
+    font-size: 17px; 
+    transition: background-color 0.3s ease;
+    white-space: nowrap; 
+}
+
+#top-menu a.active { 
+    font-weight: bold; 
+    background-color: rgba(255, 255, 255, 0.2) !important; 
+    border-radius: 4px; 
+    color: #ffffff !important; 
+}
+
+/* Banner Update */
+#banner { 
+    background-image: url('banner_5.0.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #4a86e8;
+    height: 250px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    font-family: 'ZCOOL KuaiLe', cursive, sans-serif !important; 
+}
+
+/* Dashboard Layout */
+.dashboard-container { 
+    display: flex; 
+    max-width: 1200px; 
+    margin: 30px auto; 
+    padding: 0 20px; 
+    flex: 1; 
+    width: 100%; 
+}
+
+/* Sidebar */
+#sidebar { 
+    width: 250px; 
+    border-right: 1px solid #ddd; 
+    padding-right: 20px; 
+}
+
+#sidebar ul { 
+    list-style: none; 
+}
+
+#sidebar li { 
+    margin-bottom: 10px; 
+}
+
+#sidebar a { 
+    text-decoration: none; 
+    color: #333; 
+    display: block; 
+    padding: 10px 15px; 
+    font-size: 17px; 
+    border-radius: 4px; 
+}
+
+#sidebar a.active, 
+#sidebar a:hover { 
+    font-weight: bold; 
+    background-color: #cfe2f3; 
+}
+
+#sidebar a.logout-btn { 
+    color: #d93025; 
+    margin-top: 30px; 
+}
+
+#sidebar a.logout-btn:hover { 
+    background-color: #fce8e6; 
+}
+
+/* Main Content Area */
+#content { 
+    flex: 1; 
+    padding-left: 30px; 
+}
+
+/* Profile Section */
+.profile-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    margin-bottom: 25px; 
+}
+
+#user-profile-pic { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #cfe2f3; 
+    background-color: #eee; 
+    flex-shrink: 0; 
+}
+
+.profile-header-text { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.name-display { 
+    font-size: 21px; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+
+.top-role { 
+    font-size: 17px; 
+    margin-bottom: 3px; 
+}
+
+.contact-info { 
+    margin-bottom: 25px; 
+}
+
+.contact-info p { 
+    font-size: 15px; 
+    margin-bottom: 5px; 
+}
+
+.status-link { 
+    color: #4a86e8; 
+    text-decoration: none; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.status-link:hover { 
+    text-decoration: underline; 
+}
+
+.roles-container h3 { 
+    font-size: 17px; 
+    margin-bottom: 10px; 
+}
+
+.role-title { 
+    font-weight: bold; 
+    font-size: 15px; 
+    margin-top: 15px; 
+}
+
+.role-list { 
+    font-size: 15px; 
+    list-style-type: none; 
+    padding-left: 0; 
+    margin-top: 5px; 
+}
+
+/* Achievement Section */
+#achievement-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+}
+
+.achievement-card {
+    border: 3px solid #03468F; 
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+}
+
+.achievement-iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.achievement-download {
+    font-size: 15px; 
+    color: #4a86e8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.achievement-download:hover { 
+    text-decoration: underline; 
+}
+
+.achievement-name {
+    font-size: 15px; 
+    font-weight: bold;
+    color: #333;
+}
+
+.no-record {
+    color: #F65353; 
+    font-size: 17px; 
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Points Section */
+#section-points {
+    width: 100%;
+}
+
+.points-total {
+    font-size: 21px; 
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.points-total.negative {
+    color: #FF0202; 
+}
+
+.no-points-history {
+    color: #FF0202;
+    font-size: 16px; 
+    margin-bottom: 15px;
+}
+
+.points-history-container {
+    max-height: 500px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+    padding-top: 10px;
+}
+
+.points-history-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.point-card {
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    display: block;
+    text-decoration: none; 
+    color: inherit;
+    line-height: 1.2;
+}
+
+.point-card.clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.point-card.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.point-row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+.point-earn { color: #009855; }
+.point-deduct { color: #FF0202; }
+.point-neutral { color: #007AFF; }
+
+.point-date {
+    font-size: 13px; 
+    color: #007AFF;
+    margin-bottom: 6px;
+}
+
+.point-payment {
+    font-size: 13px; 
+    color: #03468F;
+}
+
+/* Member Status Section */
+#section-status h2 { 
+    font-size: 21px; 
+    margin-bottom: 5px; 
+}
+
+.monthly-charge { 
+    font-size: 17px; 
+    color: #555; 
+    margin-bottom: 20px; 
+}
+
+.plan-details h3 { 
+    font-size: 15px; 
+    margin-bottom: 10px; 
+}
+
+.plan-list { 
+    font-size: 15px; 
+    list-style: none; 
+    line-height: 1.8; 
+}
+
+.plan-list ul { 
+    list-style-type: disc; 
+    padding-left: 25px; 
+    margin-top: 5px; 
+    margin-bottom: 10px; 
+}
+
+.contact-admin { 
+    font-size: 13px; 
+    color: #d93025; 
+    margin-top: 30px; 
+}
+
+#membership-image { 
+    max-width: 100%; 
+    margin-top: 20px; 
+    border-radius: 8px; 
+}
+
+/* Footer */
+footer { 
+    background: #ffffff; 
+    color: #333; 
+    text-align: center; 
+    padding: 30px 20px; 
+    margin-top: auto; 
+    border-top: 1px solid #eee; 
+}
+
+.social-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 20px; 
+}
+
+.social-icons a { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 40px; 
+    height: 40px; 
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 50%; 
+    text-decoration: none; 
+    font-size: 19px; 
+    transition: background-color 0.3s ease; 
+}
+
+.social-icons a[aria-label="LinkTree"] { background-color: #43E660; }
+.social-icons a[aria-label="WhatsApp"] { background-color: white; color: black; border: 2px solid black; }
+.social-icons a:hover { opacity: 0.8; }
+
+.copyright-text p { 
+    font-size: 10px; 
+    line-height: 1.4; 
+    margin: 2px 0; 
+    font-weight: bold; 
+}
+
+/* ========================================= */
+/* --- LOGIN PAGE SPECIFIC STYLES --- */
+/* ========================================= */
+
+.login-page-bg {
+    background-image: url('banner_5.0.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #4a86e8; 
+}
+
+.login-page-bg footer {
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(8px); 
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-wrapper { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex: 1; 
+    padding: 60px 20px; 
+    margin-top: 50px; 
+}
+
+.login-card { 
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px); 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2); 
+    width: 100%; 
+    max-width: 450px; 
+    text-align: center; 
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.login-card h2 { 
+    margin-bottom: 25px; 
+    font-size: 25px; 
+}
+
+.login-card input { 
+    width: 100%; 
+    padding: 12px 10px; 
+    background: #ffffff;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 17px; 
+}
+
+.login-card input:focus { 
+    outline: none; 
+    border-color: #4a86e8; 
+}
+
+.primary-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background-color: #cfe2f3; 
+    border: none; 
+    border-radius: 4px; 
+    font-weight: bold; 
+    font-size: 17px; 
+    cursor: pointer; 
+    margin-top: 5px; 
+    transition: background-color 0.2s; 
+}
+
+.primary-btn:hover { 
+    background-color: #a8d0f0; 
+}
+
+.error-msg { 
+    color: #d93025; 
+    font-size: 13px; 
+    min-height: 18px; 
+    margin: 8px 0; 
+    text-align: left; 
+    font-weight: bold;
+}
+
+.welcome-text { 
+    font-size: 15px; 
+    margin-bottom: 25px; 
+}
+
+#change-email { 
+    color: #4a86e8; 
+    text-decoration: none; 
+    margin-left: 10px; 
+    font-weight: bold; 
+}
+
+.password-container { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
+
+#toggle-password { 
+    position: absolute; 
+    right: 15px; 
+    cursor: pointer; 
+    font-size: 15px; 
+    color: #555; 
+    font-weight: bold; 
+}
+
+.protection-text { 
+    margin-top: 30px; 
+    font-size: 12px; 
+    color: #333; 
+    font-weight: bold;
+}
+
+/* ========================================= */
+/* --- RESPONSIVE NAVIGATION STYLES --- */
+/* ========================================= */
+
+.mobile-icon {
+    display: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-mobile {
+    margin-left: auto; 
+}
+
+/* Base Dropdown Styles */
+.nav-dropdown {
+    display: none; /* HIDDEN ON FULLSCREEN */
+    position: relative;
+}
+
+.desktop-only-link {
+    display: block; /* VISIBLE ON FULLSCREEN */
+}
+
+#top-menu .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a1a;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1001;
+    border-radius: 4px;
+    top: 100%;
+    right: 0; /* Aligns dropdown safely to the right edge */
+}
+
+#top-menu .dropdown-content a {
+    color: white !important;
+    padding: 12px 16px !important;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+#top-menu .dropdown-content a:hover {
+    background-color: #333 !important;
+}
+
+#top-menu .nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Side Drawer Styles */
+.drawer {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: -250px; 
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    transition: 0.3s ease;
+    padding-top: 20px;
+}
+
+.drawer.open {
+    left: 0;
+}
+
+.drawer-header {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+#close-drawer-btn {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.drawer-links {
+    list-style-type: none;
+    padding: 20px 0;
+}
+
+.drawer-links li a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    display: block;
+    transition: 0.2s;
+}
+
+.drawer-links li a:hover {
+    background-color: #333;
+}
+
+#drawer-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1500;
+}
+
+/* TABLET VIEW / COLLAPSE PHASE (688px to 1100px) */
+@media screen and (max-width: 1100px) and (min-width: 688px) {
+    .desktop-only-link {
+        display: none !important; /* Hides extra links during collapse */
+    }
+    .nav-dropdown {
+        display: block !important; /* Shows 'More' dropdown during collapse */
+    }
+    #top-menu {
+        padding: 0 15px; 
+    }
+}
+
+/* MOBILE VIEW (Less than 688px) */
+@media screen and (max-width: 687px) {
+    #desktop-nav {
+        display: none !important; 
+    }
+    
+    .mobile-icon {
+        display: block !important; 
+    }
+
+    #top-menu {
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .logo-container {
+        margin-left: 20px;
+    }
+
+    .search-mobile {
+        margin-left: auto;
+    }
+}
+
+/* Base Responsive adjustments for Sidebar */
+@media (max-width: 768px) {
+    .dashboard-container { flex-direction: column; }
+    #sidebar { width: 100%; border-right: none; border-bottom: 2px solid #eee; margin-bottom: 20px; padding-bottom: 10px; padding-right: 0; }
+    #sidebar-menu { display: flex; justify-content: space-around; flex-wrap: wrap; }
+    #sidebar a { padding: 8px 10px; text-align: center; }
+    #sidebar a.logout-btn { margin-top: 0; }
+    #content { padding-left: 0; display: flex; flex-direction: column; }
+    #achievement-container { grid-template-columns: 1fr; }
+    #section-status { display: flex; flex-direction: column; }
+    #membership-image { order: 99; margin-bottom: 20px; margin-top: 40px; }
+    .contact-admin { order: 98; }
+}
